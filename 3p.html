@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос про телефоны</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            position: absolute;
+            width: 100%;
+            height: 70%;
+            background-color: #3498db;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-out;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .buttons {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .like { background-color: #27ae60; }
+        .dislike { background-color: #e74c3c; }
+        .repeat { background-color: #f39c12; }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        .card.dislike {
+            transform: translateX(-150%) rotate(-15deg);
+        }
+
+        .card.like {
+            transform: translateX(150%) rotate(15deg);
+        }
+
+        .card.repeat {
+            transform: translateY(150%) rotate(0deg);
+        }
+
+        .additional-text {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 8px 10px;
+            font-size: 12px;
+            text-decoration: none;
+            background-color: #4c51af; /* Зеленый цвет */
+            color: white;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            margin: 1px;
+        }
+    </style>
+</head>
+<body>
+    <a href="glav.html" class="back-button">НАЗАД</a>
+    <a href="upload1.html" class="back-button">Опубликовать</a>
+    <br>
+
+<div class="container">
+    <div class="card" id="card">IPhone</div>
+    <div class="buttons">
+        <button class="button like" onclick="handleButton('like')">Норм</button>
+        <button class="button repeat" onclick="handleButton('repeat')">нейтрально</button>
+        <button class="button dislike" onclick="handleButton('dislike')">ДЕРЬМО</button>
+    </div>
+    <div class="additional-text">Кнопки, если у вас телефон</div>
+</div>
+
+<script>
+    const card = document.getElementById('card');
+    const items = [
+        "IPhone",
+        "Samsung",
+        "Huawei",
+        "Xiaomi",
+        "Oppo",
+        "OnePlus",
+        "Google Pixel",
+        "Sony",
+        "LG",
+        "Motorola",
+        "Nokia",
+        "Asus",
+        "Poco",
+        "Redmi"
+    ];
+
+    let currentItemIndex = 0;
+    card.innerText = items[currentItemIndex];
+
+    let isDragging = false;
+    let initialX;
+    let offsetX = 0;
+
+    card.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        initialX = e.clientX - offsetX;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            offsetX = e.clientX - initialX;
+            card.style.transform = `translateX(${offsetX}px) rotate(${offsetX / 15}deg)`;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            if (offsetX > 50) {
+                handleButton('like');
+            } else if (offsetX < -50) {
+                handleButton('dislike');
+            } else {
+                card.style.transform = 'translateX(0) rotate(0deg)';
+            }
+            offsetX = 0;
+        }
+    });
+
+    function handleButton(action) {
+        switch (action) {
+            case 'like':
+                card.classList.add('like');
+                break;
+            case 'dislike':
+                card.classList.add('dislike');
+                break;
+            case 'repeat':
+                card.classList.add('repeat');
+                break;
+        }
+
+        setTimeout(() => {
+            card.className = 'card';
+            currentItemIndex++;
+            if (currentItemIndex < items.length) {
+                card.innerText = items[currentItemIndex];
+            } else {
+                card.innerText = "Вы просмотрели все телефоны!";
+            }
+        }, 300);
+    }
+</script>
+
+</body>
+</html>

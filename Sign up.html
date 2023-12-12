@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social survey</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Вход в Social Survey</h1>
+    <h2>Имя пользователя:</h2>
+    <input type="text" id="usernameInput" placeholder="Введите имя пользователя" required>
+    <br>
+    <button type="button" class="styled-button" onclick="register()">Войти</button>
+
+    <script>
+        function register() {
+            var username = document.getElementById('usernameInput').value;
+
+            // Проверка на заполненность полей
+            if (!username) {
+                alert('Пожалуйста, заполните все поля.');
+            } else {
+                // Перенаправление на страницу Sign up.html
+                window.location.href = 'Im.html';
+            }
+        }
+    </script>
+</body>
+</html>

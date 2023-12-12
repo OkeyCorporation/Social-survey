@@ -1,0 +1,37 @@
+/* index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(133deg, rgba(2, 0, 36, 1) 0%, rgba(11, 11, 130, 1) 35%, rgba(128, 0, 255, 1) 100%);
+    font-family: 'Comfortaa', Arial, sans-serif;
+    background-size: cover;
+}
+
+h1, h4, h2, h6, p, span {
+    color: rgb(255, 255, 255);
+}
+
+h1, p, h2 {
+    font-family: 'Comfortaa', Arial, sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+    /* Применять стили только для устройств с шириной экрана до 600px */
+    body {
+        padding: 10px; /* Пример: уменьшить внутренний отступ */
+    }
+
+    h1 {
+        font-size: 24px; /* Пример: уменьшить размер шрифта для заголовков */
+    }
+
+    /* Добавьте другие стили по необходимости */
+}
