@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social survey</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .button-link {
+    display: inline-block;
+    padding: 8px 10px;
+    font-size: 12px;
+    text-decoration: none;
+    background-color: #4c51af00; /* Зеленый цвет */
+    color: white;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.button-link:hover {
+    opacity: 0.8;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Регистрация на Social Survey</h1>
+    <h2>Имя пользователя:</h2>
+    <input type="text" id="usernameInput" placeholder="Введите имя пользователя" required>
+    <h2>Пароль:</h2>
+    <input type="password" id="passwordInput" placeholder="Введите пароль" required>
+    <p>Подтвердите, что вы не робот</p>
+    <input type="checkbox" id="myCheckbox" required>
+    <br>
+    <button type="button" class="styled-button" onclick="register()">Зарегистрироваться</button>
+<br>
+    <p>уже есть аккаунт?</p>
+    <a href="Sign up.html" class="button-link back-button">Войти</a>
+
+    <script>
+        function register() {
+            var username = document.getElementById('usernameInput').value;
+            var password = document.getElementById('passwordInput').value;
+            var checkbox = document.getElementById('myCheckbox').checked;
+
+            // Проверка на заполненность полей
+            if (!username || !password || !checkbox) {
+                alert('Пожалуйста, заполните все поля и подтвердите, что вы не робот.');
+            } else {
+                // Перенаправление на страницу Sign up.html
+                window.location.href = 'Sign up.html';
+            }
+        }
+    </script>
+</body>
+</html>
