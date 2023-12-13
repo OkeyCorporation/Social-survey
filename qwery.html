@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social survey</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 8px 10px;
+            font-size: 12px;
+            text-decoration: none;
+            background-color: #4c51af;
+            /* Зеленый цвет */
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            margin: 0px;
+        }
+
+        .user-list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            /* Центрируем текст в списке */
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .user-item {
+            background-color: #222272;
+            /* Цвет фона для прямоугольников */
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .user-item span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .subscribe-button {
+            padding: 8px 10px;
+            font-size: 12px;
+            background-color: #4c51af;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="Im.html" class="back-button">НАЗАД</a>
+    <h1>Пользователи:</h1>
+    <h6>p.s. Вас не будут видет пользователи, пока не опубликуете хотя бы 1 опрос.</h6>
+    <ul class="user-list">
+        <li class="user-item">
+            <span>Okay Oficial ✔</span>
+            <br>
+            <button class="subscribe-button" onclick="openOfPage()">Рассмотреть</button>
+        </li>
+        <li class="user-item">
+            <span>Kelvichek</span>
+            <br>
+            <button class="subscribe-button" onclick="openKePage()">Рассмотреть</button>
+        </li>
+        <li class="user-item">
+            <span>Думер</span>
+            <br>
+            <button class="subscribe-button" onclick="openDumerPage()">Рассмотреть</button>
+        </li>
+    </ul>
+
+    <script>
+        function openOfPage() {
+            // Открывает страницу of.html
+            window.location.href = 'of.html';
+        }
+
+        function openKePage() {
+            // Открывает страницу ke.html
+            window.location.href = 'ke.html';
+        }
+
+        function openDumerPage() {
+            // Открывает страницу dumer.html
+            window.location.href = 'Dumer.html';
+        }
+    </script>
+</body>
+
+</html>
