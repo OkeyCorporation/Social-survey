@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social survey</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .styled-box {
+            width: 1000px;
+            height: 400px;
+            background-color: rgb(255, 255, 255);
+            border: 4px solid rgb(0, 0, 0);
+            border-radius: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 20px;
+        }
+
+        #avatar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 20px;
+        }
+
+        #avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 20%;
+        }
+
+        #avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            background-color: #ccc; /* Серый цвет */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #avatar-placeholder-text {
+            font-size: 24px;
+            color: white;
+        }
+
+        #avatar-controls {
+            position: fixed;
+            top: 0;
+            right: 20px;
+            margin: 20px;
+        }
+
+        #avatar-controls a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        #posts-container {
+            text-align: left;
+            margin: 20px;
+        }
+
+        .post {
+            margin-bottom: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 8px 10px;
+            font-size: 12px;
+            text-decoration: none;
+            background-color: #4c51af00; /* Зеленый цвет */
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            margin: 0px;
+        }
+
+        .vote-buttons {
+            margin-top: 5px;
+        }
+
+        .vote-button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="avatar-container">
+        <!-- Удалено место для аватарки -->
+    </div>
+
+    <div id="avatar-controls">
+        <!-- Удалено место для кнопки "Заменить аву" -->
+        <a href="qwery.html">Пользователи</a>
+        <a href="glav.html" class="button-link back-button">Главная</a>
+    </div>
+
+    <br>
+    <h1> Опросы:</h1>
+    <h4>by: Nekit</h4>
+    <div class="post">
+        <a href="dup copy.html" class="back-button">Опрос про чипсы</a>
+        <div class="vote-buttons">
+            <button class="vote-button" onclick="vote('like')">👍</button>
+            <button class="vote-button" onclick="vote('dislike')">👎</button>
+        </div>
+    </div>
+
+    <!-- Удалена кнопка "Заменить аву" -->
+    <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+
+    <script>
+        function vote(voteType) {
+            // Здесь можно добавить логику для обработки голосования (например, отправка на сервер).
+            console.log('Голос: ' + voteType);
+        }
+    </script>
+</body>
+</html>
